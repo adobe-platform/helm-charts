@@ -115,7 +115,11 @@ es:
   ## of a remote Elasticsearch server. When basic auth is needed,
   ## specify as: <proto>://<user>:<password>@<host>:<port>. e.g., http://admin:pass@localhost:9200.
   ##
-  uri: http://localhost:9200
+  uri:
+    - name: service1
+      value: http://user:password@localhost:9200
+    - name: service2
+      value: cluster2
 
   ## If true, query stats for all nodes in the cluster, rather than just the
   ## node we connect to.
