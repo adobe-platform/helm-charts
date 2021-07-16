@@ -83,8 +83,8 @@ spec:
                     {{- with $.Values.log.level }}
                     "--log.level={{ . }}",
                     {{- end }}
-                    {{- if $es_url.value }}
-                    "--es.uri={{ $es_url.value }}",
+                    {{- if $es_url.name }}
+                    "--es.uri=http://{{ $es_url.username }}:{{ $es_url.password | urlquery }}@{{ $es_url.name }}-es-http.{{ $.Release.Namespace }}.svc.cluster.local:9200",
                     {{- end }}
                     {{- if $.Values.es.all }}
                     "--es.all",
