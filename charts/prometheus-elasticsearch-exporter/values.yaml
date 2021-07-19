@@ -115,7 +115,14 @@ es:
   ## of a remote Elasticsearch server. When basic auth is needed,
   ## specify as: <proto>://<user>:<password>@<host>:<port>. e.g., http://admin:pass@localhost:9200.
   ##
-  uri: http://localhost:9200
+  uri:
+    - name: service1
+      username: prometheus
+      password: dummy$#
+    - name: service2
+      username: prometheus
+      password: dummy$#
+
 
   ## If true, query stats for all nodes in the cluster, rather than just the
   ## node we connect to.
@@ -124,19 +131,19 @@ es:
 
   ## If true, query stats for all indices in the cluster.
   ##
-  indices: true
+  indices: false
 
   ## If true, query settings stats for all indices in the cluster.
   ##
-  indices_settings: true
+  indices_settings: false
 
   ## If true, query stats for shards in the cluster.
   ##
-  shards: true
+  shards: false
 
   ## If true, query stats for snapshots in the cluster.
   ##
-  snapshots: true
+  snapshots: false
 
   ## If true, query stats for cluster settings.
   ##
