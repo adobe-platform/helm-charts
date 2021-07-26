@@ -84,7 +84,7 @@ spec:
                     "--log.level={{ . }}",
                     {{- end }}
                     {{- if $es_url.name }}
-                    "--es.uri=http://{{ $es_url.username }}:{{ $es_url.password | urlquery }}@{{ $es_url.name }}-es-http.{{ $.Release.Namespace }}.svc.cluster.local:9200",
+                    "--es.uri=http://{{ $es_url.username }}:{{ $es_url.password | urlquery }}@{{ $es_url.name }}-es-http.{{ $es_url.namespace | lower }}-elastic.svc.cluster.local:9200",
                     {{- end }}
                     {{- if $.Values.es.all }}
                     "--es.all",

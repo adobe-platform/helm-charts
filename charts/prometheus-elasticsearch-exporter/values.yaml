@@ -119,9 +119,11 @@ es:
     - name: service1
       username: prometheus
       password: dummy$#
+      namespace: default
     - name: service2
       username: prometheus
       password: dummy$#
+      namespace: default
 
 
   ## If true, query stats for all nodes in the cluster, rather than just the
