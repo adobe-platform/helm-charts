@@ -10,7 +10,6 @@ image:
   repository: quay.io/prometheuscommunity/elasticsearch-exporter
   tag: v1.2.1
   pullPolicy: IfNotPresent
-  pullSecret: ""
 
 ## Set enabled to false if you don't want securityContext
 ## in your Deployment.
@@ -64,9 +63,6 @@ service:
   annotations: {}
   labels: {}
 
-deployment:
-  annotations: {}
-
 ## Extra environment variables that will be passed into the exporter pod
 ## example:
 ## env:
@@ -118,7 +114,7 @@ es:
   ## of a remote Elasticsearch server. When basic auth is needed,
   ## specify as: <proto>://<user>:<password>@<host>:<port>. e.g., http://admin:pass@localhost:9200.
   ##
-  uri: http://localhost:9200
+  #uri: http://localhost:9200
 
   ## If true, query stats for all nodes in the cluster, rather than just the
   ## node we connect to.
